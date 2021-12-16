@@ -1,0 +1,78 @@
+﻿@model IEnumerable<ASP_WebApp.Models.Market>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Cryptocurrency</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Exchange ID
+            </th>
+            <th>
+                Symbol
+            </th>
+            <th>
+                Base asset
+            </th>
+            <th>
+                Quote asset
+            </th>
+            <th>
+                Price unconverted
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Change 24h
+            </th>
+            <th>
+                Created at
+            </th>
+            <th>
+                Updated at
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.exchange_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.symbol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.base_asset)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.quote_asset)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.price_unconverted)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.change_24h)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.created_at)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.updated_at)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

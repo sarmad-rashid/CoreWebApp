@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ASP_WebApp.Models.PersonApiModel>
+
+@{ ViewData["Title"] = "Index"; }
+<h1>Web API</h1>
+@Html.ActionLink("Create Page", "Create", "WebAPI")
+<p></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Firstname
+            </th>
+            <th>
+                Lastname
+            </th>
+            <th>
+                IDnumber
+            </th>
+            <th>
+                Adress
+            </th>
+            <th>
+                Phonenumber
+            </th>
+            <th>
+                Email
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Firstname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Lastname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IDnumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Adress)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Phonenumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+    </td>
+</tr>
+}
+    </tbody>
+</table>
